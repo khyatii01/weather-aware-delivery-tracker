@@ -1,0 +1,19 @@
+{
+  "name": "weather-aware-delivery-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Concurrent weather-aware-delivery-tracker",
+  "scripts": {
+    "start": "node --env-file=.env src/cli.mjs",
+    "start:in-place": "node --env-file=.env src/cli.mjs --input data/orders.json --output data/orders.json",
+    "demo": "node src/demo.mjs",
+    "test": "node --test test/*.test.mjs",
+    "test:coverage": "node --test --experimental-test-coverage test/*.test.mjs",
+    "validate": "node scripts/validate-project.mjs",
+    "ci": "npm run validate && npm run test:coverage && npm run demo"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
